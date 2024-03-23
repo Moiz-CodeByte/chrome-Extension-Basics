@@ -20,7 +20,8 @@
     }, 
     "permissions": [
         "storage",
-        "alarms"
+        "alarms",
+        "contextMenus"
       ],
     "options_page": "options/options.html",
     "background":{
