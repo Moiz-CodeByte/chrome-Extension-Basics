@@ -21,7 +21,17 @@
     "options_page": "options/options.html",
     "background":{
         "service_worker": "background/background.js"
-    }
-    
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript/contentScript.js"]
+        },
+        {
+            "matches":  ["https://*.google.com/*"],
+            "js": ["contentScript/contentScript.js"]
+        }
+    ]
+
     }
 
