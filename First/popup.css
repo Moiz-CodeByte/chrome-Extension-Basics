@@ -1,0 +1,13 @@
+h1{
+    padding: 20px;
+    color: rgb(0, 42, 255);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+div{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;}

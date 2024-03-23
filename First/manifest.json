@@ -1,0 +1,22 @@
+{
+    "name": "My First Extension",
+    "author": "hello@abdulmoiz.net",
+    "description": "The first extension that I made.",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "icons": { 
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "action": {
+        "default_title": "First Extension",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon.png",
+            "48": "images/icon.png",
+            "128": "images/icon.png"
+        }
+    }, 
+    "options_page": "options/options.html"
+}
