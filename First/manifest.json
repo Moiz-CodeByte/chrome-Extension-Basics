@@ -18,5 +18,10 @@
             "128": "images/icon.png"
         }
     }, 
-    "options_page": "options/options.html"
-}
+    "options_page": "options/options.html",
+    "background":{
+        "service_worker": "background/background.js"
+    }
+    
+    }
+
