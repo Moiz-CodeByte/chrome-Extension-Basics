@@ -13,3 +13,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     sendResponse({ farewell: "Goodbye"});
     
 });
+//commemt this alarm immediately otherwise ur system will stuck in mean time.
+chrome.alarms.create('demoAlarm', {
+    delayInMinutes: 1/60,
+    periodInMinutes: 1/60
+  });
+  chrome.alarms.onAlarm.addListener((alarm) =>{
+    if(alarm.name === 'demoAlarm'){
+        console.log("Alarm fired do somethig..."+ new Date().getSeconds());
+    }
+
+  })
