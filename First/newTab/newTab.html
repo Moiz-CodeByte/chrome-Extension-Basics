@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2; 
+    }
+    .search-container {
+      position: relative;
+      display: inline-block;
+    }
+    input[type="text"] {
+      padding: 10px 40px 10px 10px; 
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus {
+      border-color: #4285f4; 
+    }
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #4285f4;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .search-icon:hover {
+      color: #0d47a1; 
+    }
+    input[type="submit"] {
+      display: none; 
+    }
+    img{
+        margin-bottom: 30px;
+    }
+    
+  </style>
+</head>
+<body>
+
+<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" width="272" height="92">
+<form action="https://www.google.com/search" method="GET" target="_blank" class="search-container">
+  <input type="text" name="q" placeholder="Search Google" required>
+  <i class="fas fa-search search-icon" onclick="this.closest('form').submit()"></i>
+</form>
+
+</body>
+</html>

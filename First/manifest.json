@@ -35,7 +35,10 @@
             "matches":  ["https://*.google.com/*"],
             "js": ["contentScript/contentScript.js"]
         }
-    ]
+    ],
+    "chrome_url_overrides" : {
+        "newtab": "newTab/newTab.html"
+      }
 
     }
 
