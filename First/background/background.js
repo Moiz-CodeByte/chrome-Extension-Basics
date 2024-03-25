@@ -45,32 +45,38 @@ console.log("i am from background.js");
 //     console.log(tab);
     
 // });
-chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    console.log(tabs);
-    console.log("current tab");
-  });   
+// chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+//     console.log(tabs);
+//     console.log("current tab");
+//   });   
 
-chrome.tabs.onCreated.addListener((tab) =>{
-    console.log("tab created");
-    console.log(tab);
-});
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
-    console.log("tab updated");
-    console.log(tabId);
-    console.log(changeInfo);
-    console.log(tab);
-});
-chrome.tabs.onActivated.addListener((activeInfo) =>{
-    console.log("tab activated");
-    console.log(activeInfo);
-});
-chrome.tabs.onRemoved.addListener((tabId, removeInfo) =>{
-    console.log("tab removed");
-    console.log(tabId);
-    console.log(removeInfo);
-});
-chrome.tabs.onMoved.addListener((tabId, moveInfo) =>{
-    console.log("tab moved");
-    console.log(tabId);
-    console.log(moveInfo);
+// chrome.tabs.onCreated.addListener((tab) =>{
+//     console.log("tab created");
+//     console.log(tab);
+// });
+// chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
+//     console.log("tab updated");
+//     console.log(tabId);
+//     console.log(changeInfo);
+//     console.log(tab);
+// });
+// chrome.tabs.onActivated.addListener((activeInfo) =>{
+//     console.log("tab activated");
+//     console.log(activeInfo);
+// });
+// chrome.tabs.onRemoved.addListener((tabId, removeInfo) =>{
+//     console.log("tab removed");
+//     console.log(tabId);
+//     console.log(removeInfo);
+// });
+// chrome.tabs.onMoved.addListener((tabId, moveInfo) =>{
+//     console.log("tab moved");
+//     console.log(tabId);
+//     console.log(moveInfo);
+// });
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    console.log(sender);
+    // console.log(sendResponse);
+    sendResponse({ message: "response from backgrond"});
+    
 });
