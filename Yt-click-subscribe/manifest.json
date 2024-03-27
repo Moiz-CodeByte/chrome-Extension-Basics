@@ -1,30 +1,33 @@
 {
-    "name": "Yt click and subscribe",
-    "author": "hello@abdulmoiz.net",
-    "description": "The extension that click and subscribe to the youtube channel of first video.", 
-    "version": "0.0.1",
     "manifest_version": 3,
-    "icons": { 
+    "name": "YouTube Auto Subscribe",
+    "version": "1.0",
+    "description": "Automatically subscribes to the channel of the first video on YouTube.",
+    "permissions": ["activeTab", "tabs", "scripting"],
+
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
         "16": "images/icon.png",
         "48": "images/icon.png",
         "128": "images/icon.png"
+      }
     },
-    "action": {
-        "default_title": "First Extension",
-        "default_popup": "popup/popup.html",
-        "default_icon": {
-            "16": "images/icon.png",
-            "48": "images/icon.png",
-            "128": "images/icon.png"
-        }
-    }, 
-    "permissions": [
-        "activeTab"
-          ],
+    "icons": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    },
+    "background": {
+      "service_worker": "background/background.js"
+    },
   
-    "background":{
-        "service_worker": "background/background.js"
-    }
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript/contentScript.js"]
+        }
+    ]
 
     }
 

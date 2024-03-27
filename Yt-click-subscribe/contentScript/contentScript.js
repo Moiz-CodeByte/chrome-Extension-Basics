@@ -1,21 +1,24 @@
-//document.querySelectorAll('#thumbnail > yt-img > img')[3].click();
-chrome.action.onClicked.addListener((tab) => {
-    chrome.scripting.executeScript({
-      target: {tabId: tab.id},
-      function: openYouTubeAndSubscribe
-    });
-  });
-  
-  function openYouTubeAndSubscribe() {
-    const thumbnail = document.querySelectorAll('#thumbnail > yt-image > img')[3];
-    if (thumbnail) {
-      thumbnail.click();
-      setTimeout(() => {
-        const subscribeButton = document.querySelector('ytd-subscribe-button-renderer > paper-button');
-        if (subscribeButton) {
-          subscribeButton.click();
-        }
-      }, 2000); // Adjust the delay as needed to ensure the page loads properly
-    }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
-  
+chrome.runtime.onMessage.addListener( async function(message, sender, sendResponse) {
+    if (message.action === 'startProcess') {
+            await sleep(4000);
+            document.querySelectorAll('#thumbnail >yt-image >img')[2].click();
+            await sleep(3000);
+            document.querySelectorAll('#subscribe-button-shape >button')[0].click();
+            await sleep(2000);
+            window.scrollBy(0,400)
+            await sleep(2000);
+            document.querySelector('#placeholder-area').click()
+            await sleep(5000);
+            const commentInput = document.querySelector('#contenteditable-root');
+            commentInput.focus();
+            document.execCommand('insertText', false, 'Hello World');
+            await sleep(5000);
+            document.querySelector('#submit-button > yt-button-shape > button').click();
+          }
+          
+        });
+    
+    

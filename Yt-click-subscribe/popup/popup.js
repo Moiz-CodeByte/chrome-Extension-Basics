@@ -1,25 +1,10 @@
-// console.log("I am from popup.js");
+//popup.js
+document.addEventListener('DOMContentLoaded', function() {
 
-
-
-// let btn = document.getElementById('btn');
-// let text = document.getElementById('text');
-
-
-   
-   
-//     // chrome.runtime.sendMessage({message : "response from popup"}, (response) => {
-//     //     text.innerHTML= response.message
-//     //     console.log(response.message);
-
-//     // });
-// //}):
-document.getElementById('startButton').addEventListener('click', () => {
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      chrome.scripting.executeScript({
-        target: {tabId: tabs[0].id},
-        function: openYouTubeAndSubscribe
-      });
+  document.getElementById('startProcess').addEventListener('click', function() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, {action: 'startProcess'});
     });
   });
-  
+});
+
