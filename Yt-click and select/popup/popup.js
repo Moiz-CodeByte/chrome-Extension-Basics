@@ -8,3 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  if (message.action === "updateText") {
+    
+      document.getElementById('text').innerHTML = message.name;
+  }
+});
+  
