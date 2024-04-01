@@ -43,8 +43,7 @@ body {
   button:active {
     background-color: #3e8e41;
   }
-  /* FILEPATH: /f:/MEGA/Extension Basics/Smart play login/popup/popup.css */
-    /* BEGIN: form-styling */
+
     form {
       display: flex;
       flex-direction: column;
@@ -75,4 +74,4 @@ body {
     input[type="submit"]:hover {
       background-color: #45a049;
     }
-    /* END: form-styling */
+    
