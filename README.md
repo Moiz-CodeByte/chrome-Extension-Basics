@@ -14,7 +14,7 @@ This repository contains four Chrome browser extensions for various purposes.
 
 ### 3. Smart Play Login
 
-- **Description:** This extension assists in logging in with the help of the extension popup on websites that have no inspect menu.
+- **Description:** This extension assists in logging in with the help of the extension popup on website `https://www.smartplay.lcsd.gov.hk/home` that have no inspect menu.
 
 ### 4. Yt-Click and Select
 
