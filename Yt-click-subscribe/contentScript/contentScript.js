@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener( async function(message, sender, sendRespon
             await sleep(2000);
             window.scrollBy(0,400)
             await sleep(2000);
-            document.querySelector('#placeholder-area').click()
+           document.querySelector('#placeholder-area').click()
             await sleep(5000);
             const commentInput = document.querySelector('#contenteditable-root');
             commentInput.focus();
