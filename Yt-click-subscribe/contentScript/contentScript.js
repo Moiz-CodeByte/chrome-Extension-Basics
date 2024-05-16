@@ -18,7 +18,7 @@ chrome.runtime.onMessage.addListener( async function(message, sender, sendRespon
             await sleep(5000);
             document.querySelector('#submit-button > yt-button-shape > button').click();
           }
-          
+            
         });
     
     
